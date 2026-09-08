@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+html {
+  background-color: #ffffff;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.clip-runcing-left {
+  clip-path: ellipse(100% 100% at 20% 0%);
+}
+
+/* ===== ACCESSIBILITY KEYBOARD NAVIGATION ===== */
+html.keyboard-nav *:focus {
+  outline: 3px solid #16a34a !important;
+  outline-offset: 3px !important;
+  border-radius: 4px !important;
+}
+
+html.keyboard-nav button:focus,
+html.keyboard-nav a:focus,
+html.keyboard-nav input:focus,
+html.keyboard-nav select:focus,
+html.keyboard-nav textarea:focus {
+  outline: 3px solid #16a34a !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.2) !important;
+}
+
+/* Skip to content link */
+html.keyboard-nav .skip-to-content {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #16a34a;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 99999;
+  transition: top 0.2s;
+}
+
+html.keyboard-nav .skip-to-content:focus {
+  top: 16px;
+}
+
+/* ===== ACCESSIBILITY HIGH CONTRAST ===== */
+html.high-contrast body {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.high-contrast *:not(img):not(svg):not(path):not(circle):not(rect) {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+html.high-contrast a,
+html.high-contrast a * {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+}
+
+html.high-contrast button:hover,
+html.high-contrast button:hover * {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+html.high-contrast img {
+  filter: contrast(1.2) brightness(0.9);
+}
+
+html.high-contrast svg {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+html.high-contrast input::placeholder,
+html.high-contrast textarea::placeholder {
+  color: #aaaaaa !important;
+}
+html.font-normal {
+  font-size: 16px;
+}
+
+html.font-large {
+  font-size: 20px;
+}
+
+html.font-xlarge {
+  font-size: 24px;
+}
+
+html.font-large body,
+html.font-large p,
+html.font-large span,
+html.font-large h1,
+html.font-large h2,
+html.font-large h3,
+html.font-large h4,
+html.font-large h5,
+html.font-large h6,
+html.font-large a,
+html.font-large button,
+html.font-large label,
+html.font-large input,
+html.font-large select,
+html.font-large textarea {
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important;
+}
+
+html.font-xlarge body,
+html.font-xlarge p,
+html.font-xlarge span,
+html.font-xlarge h1,
+html.font-xlarge h2,
+html.font-xlarge h3,
+html.font-xlarge h4,
+html.font-xlarge h5,
+html.font-xlarge h6,
+html.font-xlarge a,
+html.font-xlarge button,
+html.font-xlarge label,
+html.font-xlarge input,
+html.font-xlarge select,
+html.font-xlarge textarea {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
+}
